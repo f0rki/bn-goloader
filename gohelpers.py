@@ -97,11 +97,17 @@ class FunctionRenamer(GoHelper):
         log_info("renaming functions based on .gopclntab section")
 
         gopclntab = self.get_section_by_name(".gopclntab")
-        if gopclntab is None:
-            log_alert("Failed to find section '.gopclntab'")
-            return
 
-        base_addr = gopclntab.start
+        if gopclntab is None:
+            pattern = "\xfb\xff\xff\xff\x00\x00"
+            base_addr = self.bv.find_next_data(0, pattern)
+
+            if base_addr is None:
+                log_alert("Failed to find section '.gopclntab'")
+                return
+        else:
+            base_addr = gopclntab.start
+
         size_addr = base_addr + 8
         size = self.get_pointer_at(size_addr)
 
