@@ -1,6 +1,6 @@
 from binaryninja import PluginCommand
 
-from gohelpers import rename_functions, rename_newproc_fptrs
+from .gohelpers import rename_functions, rename_newproc_fptrs
 
 PluginCommand.register(
     "golang - auto-rename functions",
