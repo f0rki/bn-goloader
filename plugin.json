@@ -1,20 +1,31 @@
 {
-	"plugin": {
-		"name": "bn-goloader",
-		"type": ["binaryview"],
-		"api": "python2",
-		"description": "Short script that parses go symbol table and renames/creates functions.",
-		"longdescription": "",
-		"license": {
-			"name": "MIT",
-			"text": "Copyright (c) 2017 Michael Rodler (contact@f0rki.at)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
-		},
-		"dependencies": {
-		},
-		"version": "0.1",
-		"author": "Michael Rodler",
-		"minimumBinaryNinjaVersion": {
-			"dev": "1.0"
-		}
-	}
+    "api": [
+        "python2",
+        "python3"
+    ],
+    "author": "Michael Rodler",
+    "dependencies": {},
+    "description": "Short script that parses go symbol table and renames/creates functions.",
+    "installinstructions": {
+        "Darwin": "no special instructions, package manager is recommended",
+        "Linux": "no special instructions, package manager is recommended",
+        "Windows": "no special instructions, package manager is recommended"
+    },
+    "license": {
+        "name": "MIT",
+        "text": "Copyright (c) 2017 Michael Rodler (contact@f0rki.at)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+    },
+    "longdescription": "go reversing helpers for binaryninja.\n\nBasically this is some stuff ported from the IDA pro script\n[golang_load_assist](https://github.com/strazzere/golang_loader_assist)\n\n Probably incomplete!\n\n### go reversing blog posts\n\n * http://rednaga.io/2016/09/21/reversing_go_binaries_like_a_pro/",
+    "minimumbinaryninjaversion": 1528,
+    "name": "GO Loader Assist",
+    "platforms": [
+        "Darwin",
+        "Linux",
+        "Windows"
+    ],
+    "pluginmetadataversion": 2,
+    "type": [
+        "ui"
+    ],
+    "version": "1.1"
 }
