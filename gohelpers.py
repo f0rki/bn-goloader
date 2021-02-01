@@ -46,19 +46,6 @@ class GoHelper(bn.plugin.BackgroundTaskThread):
         else:
             return None
 
-    def read_cstring(self, address):
-        self.br.seek(address)
-        st = ""
-        while "\x00" not in st and len(st) < 0x1000:
-            x = self.br.read(255)
-            if x:
-                st += x
-                self.br.seek(address + len(st))
-            else:
-                break
-            log_debug("{!r}".format(st))
-        return st
-
     def get_pointer_at_virt(self, addr, size=None):
         x = self.bv.read(addr, self.ptr_size)
         if len(x) == 8:
@@ -129,7 +116,11 @@ class FunctionRenamer(GoHelper):
                 base_addr + entry_offset + self.ptr_size, 4)
             name_addr = base_addr + name_str_offset
 
-            name = self.read_cstring(name_addr)
+            name = self.bv.get_ascii_string_at(name_addr)
+            if not name:
+                continue
+            name=name.value
+
             log_debug("found name '{}' for address 0x{:x}"
                       .format(name, func_addr))
 
