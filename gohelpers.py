@@ -86,7 +86,7 @@ class FunctionRenamer(GoHelper):
         gopclntab = self.get_section_by_name(".gopclntab")
 
         if gopclntab is None:
-            pattern = "\xfb\xff\xff\xff\x00\x00"
+            pattern = b"\xfb\xff\xff\xff\x00\x00"
             base_addr = self.bv.find_next_data(0, pattern)
 
             if base_addr is None:
